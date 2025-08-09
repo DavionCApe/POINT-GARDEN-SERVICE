@@ -1,0 +1,36 @@
+name: POINT GARDEN SERVICE
+
+on:
+  push:
+
+  jobs:
+    build:
+      runs-on: Windows-latest
+      permissions:
+         contents: read
+      steps:   
+       -uses: actions/checkout@v4
+       -name: Set up JDK 17
+        uses: actions/setup-java@v4
+        with:
+          java-versions: 17
+          distribution: 'temurin'
+       -name: Setup Gradle
+        uses: gradle/actions/setup-gadle@v9
+       -name: Build with Gradle Wrapper
+        run:  ./gradlew build
+    
+    dependency-submission:
+      run-on: Windows-latest
+      permissions:
+        contents: write
+    steps:
+    -uses: action/checkout@v4
+    -name: Set up JDK 17
+     uses: actions/setup-java@v4
+     with: 
+        java-version: "17"
+        distribution: 'temurin
+     -name: Generate and submit dependancy graph
+      uses: gradle/actions/dependancy-submission@v4
+        

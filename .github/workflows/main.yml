@@ -30,7 +30,7 @@ steps:
 uses: actions/setup-java@v4
 with:
         java-version: "17"
-        distribution: 'temurin
-       -name: Generate and submit dependency graph
+        distribution: 'temurin'
+ -name: Generate and submit dependency graph
         uses: gradle/actions/dependancy-submission@v4
         

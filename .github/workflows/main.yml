@@ -31,6 +31,6 @@ uses: actions/setup-java@v4
 with:
         java-version: "17"
         distribution: 'temurin
-        -name: chmod +x Generate and submit dependancy graph
-    uses: gradle/actions/dependancy-submission@v4
+       -name: Generate and submit dependency graph
+        uses: gradle/actions/dependancy-submission@v4
         
